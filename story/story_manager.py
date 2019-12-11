@@ -129,13 +129,13 @@ class Story:
         f.write(story_json)
         f.close()
 
-        FNULL = open(os.devnull, "w")
-        p = Popen(
-            ["gsutil", "cp", file_name, "gs://aidungeonstories"],
-            stdout=FNULL,
-            stderr=subprocess.STDOUT,
-        )
-        return self.uuid
+        #FNULL = open(os.devnull, "w")
+        #p = Popen(
+        #    ["gsutil", "cp", file_name, "gs://aidungeonstories"],
+        #    stdout=FNULL,
+        #    stderr=subprocess.STDOUT,
+        #)
+        #return self.uuid
 
     def load_from_storage(self, story_id):
 
