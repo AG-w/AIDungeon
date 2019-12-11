@@ -88,7 +88,8 @@ def instructions():
     text += '\n  "load"     Asks for a save ID and loads the game if the ID is valid'
     text += '\n  "print"    Prints a transcript of your adventure (without extra newline formatting)'
     text += '\n  "help"     Prints these instructions again'
-    text += '\n  "censor off/on" to turn censoring off or on.'
+    text += '\n  "censor off/on" to turn censoring off or on'
+    text += '\n  "gen default/strict" to control how randomness will story generate.'
     return text
 
 
@@ -165,6 +166,14 @@ def play_aidungeon_2():
 
             elif action == "censor on":
                 generator.censor = True
+                
+            elif action == "gen default":
+                generator.temp = 0.4
+                generator.top_k = 40
+                
+            elif action == "gen strict":
+                generator.temp = 0.2
+                generator.top_k = 20
 
             elif action == "save":
                 if upload_story:
